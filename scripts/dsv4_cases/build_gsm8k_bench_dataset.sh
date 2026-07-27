@@ -3,8 +3,6 @@
 set -euo pipefail
 
 DEFAULT_SOURCE="/home/t00937989/datasets/gsm8k/test_sharegpt_style.json"
-MODELSCOPE_DATASET_ID="${MODELSCOPE_DATASET_ID:-AI-ModelScope/gsm8k}"
-HUGGINGFACE_DATASET_ID="${HUGGINGFACE_DATASET_ID:-openai/gsm8k}"
 
 sample_count="${1:-112}"
 target_tokens="${2:-8192}"
@@ -64,72 +62,8 @@ if ! command -v "$python_bin" >/dev/null 2>&1; then
 fi
 
 if [[ ! -f "$source_file" ]]; then
-  source_dir=$(dirname "$source_file")
-  mkdir -p "$source_dir"
-  download_tmp="${source_file}.download.$$"
-  trap 'rm -f "$download_tmp"' EXIT
-
-  if ! "$python_bin" - "$download_tmp" "$MODELSCOPE_DATASET_ID" "$HUGGINGFACE_DATASET_ID" <<'PY'
-import json
-import sys
-
-output_path, modelscope_id, huggingface_id = sys.argv[1:]
-
-
-def write_sharegpt(dataset):
-    rows = []
-    for row in dataset:
-        question = row.get("question")
-        answer = row.get("answer")
-        if isinstance(question, str) and isinstance(answer, str):
-            rows.append(
-                {
-                    "conversations": [
-                        {"from": "human", "value": f"Question: {question}\nAnswer:"},
-                        {"from": "gpt", "value": f" {answer}"},
-                    ]
-                }
-            )
-    if not rows:
-        raise RuntimeError("GSM8K dataset contains no question/answer rows")
-    with open(output_path, "w", encoding="utf-8") as output:
-        json.dump(rows, output, ensure_ascii=False, indent=2)
-
-
-errors = []
-try:
-    from modelscope.msdatasets import MsDataset
-
-    for split in ("validation", "test"):
-        try:
-            write_sharegpt(
-                MsDataset.load(modelscope_id, subset_name="main", split=split)
-            )
-            print(f"Downloaded GSM8K from ModelScope ({split})")
-            break
-        except Exception as error:
-            errors.append(f"ModelScope {split}: {error}")
-    else:
-        raise RuntimeError("; ".join(errors))
-except Exception as error:
-    errors.append(f"ModelScope: {error}")
-    try:
-        from datasets import load_dataset
-
-        write_sharegpt(load_dataset(huggingface_id, "main", split="test"))
-        print("Downloaded GSM8K from Hugging Face")
-    except Exception as fallback_error:
-        errors.append(f"Hugging Face: {fallback_error}")
-        raise RuntimeError("; ".join(errors)) from fallback_error
-PY
-  then
-    echo "Unable to download GSM8K dataset" >&2
-    exit 1
-  fi
-
-  mv "$download_tmp" "$source_file"
-  trap - EXIT
-  echo "Prepared GSM8K source dataset at $source_file"
+  echo "Source dataset not found: $source_file" >&2
+  exit 1
 fi
 
 output_dir=$(dirname "$output_file")
@@ -154,11 +88,6 @@ with open(source_path, encoding="utf-8") as source_file:
 
 if not source_rows:
     raise RuntimeError("Source dataset is empty")
-if sample_count > len(source_rows):
-    raise RuntimeError(
-        f"Cannot sample {sample_count} unique rows from {len(source_rows)} rows"
-    )
-
 if sample_count <= len(source_rows):
     rows = random.sample(source_rows, sample_count)
 else:
