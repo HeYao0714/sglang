@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-DEFAULT_SOURCE="/home/t00937989/datasets/gsm8k/test_sharegpt_style.json"
+DEFAULT_SOURCE="/home/t00937989/datasets/gsm8k/test.jsonl"
 
 sample_count="${1:-112}"
 target_tokens="${2:-8192}"
@@ -84,7 +84,10 @@ target_tokens = int(target_tokens)
 
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, trust_remote_code=True)
 with open(source_path, encoding="utf-8") as source_file:
-    source_rows = json.load(source_file)
+    if source_path.endswith(".jsonl"):
+        source_rows = [json.loads(line) for line in source_file if line.strip()]
+    else:
+        source_rows = json.load(source_file)
 
 if not source_rows:
     raise RuntimeError("Source dataset is empty")
@@ -94,15 +97,19 @@ else:
     rows = random.choices(source_rows, k=sample_count)
 output_rows = []
 for row in rows:
-    conversations = row.get("conversations", [])
-    question = next(
-        (item["value"] for item in conversations if item.get("from") == "human"),
-        None,
-    )
-    answer = next(
-        (item["value"] for item in conversations if item.get("from") == "gpt"),
-        None,
-    )
+    if "question" in row and "answer" in row:
+        question = row["question"]
+        answer = row["answer"]
+    else:
+        conversations = row.get("conversations", [])
+        question = next(
+            (item["value"] for item in conversations if item.get("from") == "human"),
+            None,
+        )
+        answer = next(
+            (item["value"] for item in conversations if item.get("from") == "gpt"),
+            None,
+        )
     if not isinstance(question, str) or not isinstance(answer, str):
         raise RuntimeError("Every row must contain human and gpt conversations")
 
