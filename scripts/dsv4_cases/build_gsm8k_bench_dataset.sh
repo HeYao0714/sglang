@@ -215,12 +215,15 @@ def round_trip(token_ids: list[int]) -> tuple[str, list[int]]:
 
 def read_source_rows(path: str) -> list[dict]:
     with open(path, encoding="utf-8") as source_file:
-        if path.endswith(".jsonl"):
-            rows = [json.loads(line) for line in source_file if line.strip()]
-        else:
-            rows = json.load(source_file)
+        source_text = source_file.read()
+    try:
+        rows = json.loads(source_text)
+    except json.JSONDecodeError:
+        rows = [json.loads(line) for line in source_text.splitlines() if line.strip()]
     if not isinstance(rows, list) or not rows:
         raise ValueError("Source dataset must contain a non-empty list of rows")
+    if not all(isinstance(row, dict) for row in rows):
+        raise ValueError("Every source dataset row must be a JSON object")
     return rows
 
 
