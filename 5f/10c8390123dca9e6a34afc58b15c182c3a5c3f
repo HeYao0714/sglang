@@ -1,0 +1,32 @@
+.github/workflows/nightly-test-npu-e2e-single-node.yml
+  s_3f470af7e83c51::t_7dc1be98da9baf 1-224
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "5f10c8390123dca9e6a34afc58b15c182c3a5c3f",
+  "prompts": {},
+  "sessions": {
+    "s_3f470af7e83c51": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a8d68d54f06b45a1e70c111",
+        "model": "deepseek-V4-Pro"
+      },
+      "human_author": "HeYao <heyao@example.com>",
+      "custom_attributes": {
+        "dedupe_key": "6a8d68d54f06b45a1e70c111:6a8d69874f06b45a1e70c190:afterEdit:b4ae2cdd",
+        "tool_use_id": "6a8d69874f06b45a1e70c190",
+        "external_session_id": "6a8d68d54f06b45a1e70c111",
+        "source_scene": "agent",
+        "client_type": "ide",
+        "operation_id": "6a8d69874f06b45a1e70c190",
+        "edit_kind": "file_edit",
+        "runtime_client": "trae-tob-git-ai",
+        "session_id": "6a8d68d54f06b45a1e70c111",
+        "tool_type": "builtin",
+        "tool_id": "icube:applyChatSnapshotPatch"
+      }
+    }
+  }
+}
