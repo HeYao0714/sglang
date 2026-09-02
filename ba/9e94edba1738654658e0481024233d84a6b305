@@ -1,0 +1,14 @@
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_swa_full_tokens_ratio.py
+  h_fa150366c6a68c 432-437
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "ba9e94edba1738654658e0481024233d84a6b305",
+  "prompts": {},
+  "humans": {
+    "h_fa150366c6a68c": {
+      "author": "HeYao <heyao@example.com>"
+    }
+  }
+}
