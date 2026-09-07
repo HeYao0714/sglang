@@ -1,0 +1,45 @@
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_disable_hybrid_swa_memory.py
+  s_8dada642ce2665::t_2dd0b782af65e0 142-147
+  s_8dada642ce2665::t_a868cfeaaa8bc0 152-160
+  s_8dada642ce2665::t_4dd4fb87f23f40 181-182
+  s_8dada642ce2665::t_7531f96b2e6a30 15
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_swa_full_tokens_ratio.py
+  s_8dada642ce2665::t_99e96081c2839f 181-182
+  s_8dada642ce2665::t_4caf50f9435be3 151-158
+  s_8dada642ce2665::t_0e64e01448f752 143-148
+  s_8dada642ce2665::t_9b6ca1f149b444 14
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_dynamic_chunking.py
+  s_8dada642ce2665::t_32be7f017945b9 164-165
+  s_8dada642ce2665::t_c68ac0200c9904 66-71
+  s_8dada642ce2665::t_f39e6395617a7e 124-131
+  s_8dada642ce2665::t_c7c214c99a5c8f 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "f8d253b709aa81f9becd91e958e1d8efbff0163c",
+  "prompts": {},
+  "sessions": {
+    "s_8dada642ce2665": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a900a094f06b45a1e70c2ae",
+        "model": "deepseek-V4-Pro"
+      },
+      "human_author": "HeYao <heyao@example.com>",
+      "custom_attributes": {
+        "operation_id": "6a9ec50d4f06b45a1e70d124",
+        "tool_use_id": "6a9ec50d4f06b45a1e70d124",
+        "dedupe_key": "6a900a094f06b45a1e70c2ae:6a9ec50d4f06b45a1e70d124:afterEdit:4457a850",
+        "external_session_id": "6a900a094f06b45a1e70c2ae",
+        "edit_kind": "file_edit",
+        "session_id": "6a900a094f06b45a1e70c2ae",
+        "source_scene": "agent",
+        "client_type": "ide",
+        "tool_type": "builtin",
+        "tool_id": "icube:applyChatSnapshotPatch",
+        "runtime_client": "trae-tob-git-ai"
+      }
+    }
+  }
+}
