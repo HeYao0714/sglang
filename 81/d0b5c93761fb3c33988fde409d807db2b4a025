@@ -1,0 +1,42 @@
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_disable_hybrid_swa_memory.py
+  s_8dada642ce2665::t_53ca9c4da6d909 172-173
+  s_8dada642ce2665::t_3d17a8042ef77f 171
+  s_8dada642ce2665::t_8a2ccf684b0972 134-135
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_dynamic_chunking.py
+  s_8dada642ce2665::t_19ff8c055cc4a8 118
+  s_8dada642ce2665::t_a9ab20fd8c73ca 66-67
+  s_8dada642ce2665::t_fda9b53f745f51 116-117,119-120
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_swa_full_tokens_ratio.py
+  s_8dada642ce2665::t_506455e19051b8 170
+  s_8dada642ce2665::t_bebd45df0f9599 133-134
+  s_8dada642ce2665::t_a330bfd2cb13df 171-172
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "81d0b5c93761fb3c33988fde409d807db2b4a025",
+  "prompts": {},
+  "sessions": {
+    "s_8dada642ce2665": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a900a094f06b45a1e70c2ae",
+        "model": "deepseek-V4-Pro"
+      },
+      "human_author": "HeYao <heyao@example.com>",
+      "custom_attributes": {
+        "operation_id": "6a9f80414f06b45a1e70d212",
+        "source_scene": "agent",
+        "client_type": "ide",
+        "dedupe_key": "6a900a094f06b45a1e70c2ae:6a9f80414f06b45a1e70d212:afterEdit:4457a850",
+        "edit_kind": "file_edit",
+        "external_session_id": "6a900a094f06b45a1e70c2ae",
+        "tool_id": "icube:applyChatSnapshotPatch",
+        "tool_use_id": "6a9f80414f06b45a1e70d212",
+        "tool_type": "builtin",
+        "session_id": "6a900a094f06b45a1e70c2ae",
+        "runtime_client": "trae-tob-git-ai"
+      }
+    }
+  }
+}
