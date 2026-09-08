@@ -1,0 +1,32 @@
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_swa_full_tokens_ratio.py
+  s_8dada642ce2665::t_7ae1590e3ddebe 161-181
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "9f3129dea8ff6e7f313ace0ca5348956289a8c65",
+  "prompts": {},
+  "sessions": {
+    "s_8dada642ce2665": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a900a094f06b45a1e70c2ae",
+        "model": "deepseek-V4-Pro"
+      },
+      "human_author": "HeYao <heyao@example.com>",
+      "custom_attributes": {
+        "runtime_client": "trae-tob-git-ai",
+        "session_id": "6a900a094f06b45a1e70c2ae",
+        "tool_type": "builtin",
+        "client_type": "ide",
+        "dedupe_key": "6a900a094f06b45a1e70c2ae:6a9f698e4f06b45a1e70d13e:afterEdit:4457a850",
+        "operation_id": "6a9f698e4f06b45a1e70d13e",
+        "tool_use_id": "6a9f698e4f06b45a1e70d13e",
+        "tool_id": "icube:applyChatSnapshotPatch",
+        "source_scene": "agent",
+        "external_session_id": "6a900a094f06b45a1e70c2ae",
+        "edit_kind": "file_edit"
+      }
+    }
+  }
+}
