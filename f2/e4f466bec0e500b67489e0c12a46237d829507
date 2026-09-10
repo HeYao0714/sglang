@@ -1,0 +1,51 @@
+test/registered/npu/basic_function/runtime_options/test_npu_disaggregation_pp.py
+  s_8dada642ce2665::t_516579cbe93ee3 274-276,278
+  s_8dada642ce2665::t_6f582f1de455f9 241,245,254-255
+  s_8dada642ce2665::t_8543028316a819 299-301,303
+  s_8dada642ce2665::t_40d320bc66212f 247
+test/registered/npu/basic_function/optimization_debug_options/test_npu_image_processor_backend.py
+  s_8dada642ce2665::t_52c6ac75c4deb0 74-79,92,98-117,119-121,123-125
+  s_8dada642ce2665::t_d660e1599516b2 25-46
+  s_8dada642ce2665::t_b62d3a365a154a 7,10
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_retraction_policy.py
+  s_8dada642ce2665::t_d0a85577c48a1a 158-164,182
+  s_8dada642ce2665::t_106ff903d62779 177,227
+  s_8dada642ce2665::t_b56d15c72d9a91 28,57,126-127
+  s_8dada642ce2665::t_9bb615fbf9b858 94,110
+  s_8dada642ce2665::t_da2235af734b1b 23-24,38,59,120-121
+  s_8dada642ce2665::t_3ef84e79301421 122-123
+  s_8dada642ce2665::t_d99803dd757dc1 257,263-264
+  s_8dada642ce2665::t_cf49e536b44adf 21-22,25-26,29-35,39,48-51,67-68,80-81,83,96-97,99-108,111-119,124-125,128-132,134-139,143-145
+  s_8dada642ce2665::t_10ed46d01a1d0a 27
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_swa_full_tokens_ratio.py
+  s_8dada642ce2665::t_72163661051662 184,187,189-192
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "f2e4f466bec0e500b67489e0c12a46237d829507",
+  "prompts": {},
+  "sessions": {
+    "s_8dada642ce2665": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a900a094f06b45a1e70c2ae",
+        "model": "deepseek-V4-Pro"
+      },
+      "human_author": "HeYao <heyao@example.com>",
+      "custom_attributes": {
+        "source_scene": "agent",
+        "tool_use_id": "6aa222cc8e2b78dcd319ae1b",
+        "operation_id": "6aa222cc8e2b78dcd319ae1b",
+        "runtime_client": "trae-tob-git-ai",
+        "external_session_id": "6a900a094f06b45a1e70c2ae",
+        "client_type": "ide",
+        "dedupe_key": "6a900a094f06b45a1e70c2ae:6aa222cc8e2b78dcd319ae1b:afterEdit:4457a850",
+        "session_id": "6a900a094f06b45a1e70c2ae",
+        "tool_type": "builtin",
+        "edit_kind": "file_edit",
+        "tool_id": "icube:applyChatSnapshotPatch"
+      }
+    }
+  }
+}
