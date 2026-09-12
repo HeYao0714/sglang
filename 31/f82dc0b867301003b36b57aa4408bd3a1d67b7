@@ -1,0 +1,42 @@
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_dynamic_chunking.py
+  s_8dada642ce2665::t_cd2705a031e98c 82-142
+  s_8dada642ce2665::t_0ae81e6ef46b31 37-39,48-51,53-54,57,65-80
+  s_8dada642ce2665::t_f679c6dada5c55 81
+test/registered/npu/basic_function/optimization_debug_options/test_npu_image_processor_backend.py
+  s_8dada642ce2665::t_a29875d8e30dd0 138,142,146
+  s_8dada642ce2665::t_f7356e2e8d4682 74-79,84-85,87,93-134
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "31f82dc0b867301003b36b57aa4408bd3a1d67b7",
+  "prompts": {},
+  "humans": {
+    "h_fa150366c6a68c": {
+      "author": "HeYao <heyao@example.com>"
+    }
+  },
+  "sessions": {
+    "s_8dada642ce2665": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a900a094f06b45a1e70c2ae",
+        "model": "deepseek-V4-Pro"
+      },
+      "human_author": "HeYao <heyao@example.com>",
+      "custom_attributes": {
+        "tool_use_id": "6aa4b92b1d7db59042c3f493",
+        "source_scene": "agent",
+        "tool_id": "icube:applyChatSnapshotPatch",
+        "runtime_client": "trae-tob-git-ai",
+        "external_session_id": "6a900a094f06b45a1e70c2ae",
+        "operation_id": "6aa4b92b1d7db59042c3f493",
+        "dedupe_key": "6a900a094f06b45a1e70c2ae:6aa4b92b1d7db59042c3f493:afterEdit:69ddbde5",
+        "tool_type": "builtin",
+        "edit_kind": "file_edit",
+        "client_type": "ide",
+        "session_id": "6a900a094f06b45a1e70c2ae"
+      }
+    }
+  }
+}
