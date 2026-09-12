@@ -1,0 +1,32 @@
+test/registered/npu/basic_function/memory_and_scheduling/test_npu_retraction_policy.py
+  s_8dada642ce2665::t_ad49c0eb74e222 72-75,77-78,81-82,84-111,113-128,130-131,133-157,159-168,170-175,177-180,182-186,250-270,277-289,291-293,295-311,313-315,317-361,363-384,386-397
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "0057614b2136a39cfa48451f9ab726ec689a869a",
+  "prompts": {},
+  "sessions": {
+    "s_8dada642ce2665": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a900a094f06b45a1e70c2ae",
+        "model": "deepseek-V4-Pro"
+      },
+      "human_author": "HeYao <heyao@example.com>",
+      "custom_attributes": {
+        "source_scene": "agent",
+        "tool_use_id": "6aa4c6151d7db59042c3f50c",
+        "operation_id": "6aa4c6151d7db59042c3f50c",
+        "tool_id": "icube:applyChatSnapshotPatch",
+        "tool_type": "builtin",
+        "edit_kind": "file_edit",
+        "runtime_client": "trae-tob-git-ai",
+        "external_session_id": "6a900a094f06b45a1e70c2ae",
+        "session_id": "6a900a094f06b45a1e70c2ae",
+        "client_type": "ide",
+        "dedupe_key": "6a900a094f06b45a1e70c2ae:6aa4c6151d7db59042c3f50c:afterEdit:0a17c102"
+      }
+    }
+  }
+}
