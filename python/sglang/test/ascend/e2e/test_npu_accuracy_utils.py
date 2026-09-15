@@ -117,6 +117,7 @@ def run_evalscope(
     timeout=60000,
     stream=True,
     eval_type="openai_api",
+    judge_model_args=None,
 ):
 
     metrics_path = os.getenv("METRICS_DATA_FILE")
@@ -144,6 +145,8 @@ def run_evalscope(
         config_dict["dataset_args"] = dataset_args
     if dataset_dir:
         config_dict["dataset_dir"] = dataset_dir
+    if judge_model_args:
+        config_dict["judge_model_args"] = judge_model_args
 
     config_json = json.dumps(config_dict, ensure_ascii=False, indent=2)
     config_json_escaped = config_json.replace("\\", "\\\\").replace("'''", "\\'\\'\\'")
@@ -289,6 +292,7 @@ class TestNpuAccuracyTestCaseBase(CustomTestCase):
     stream = True
     timeout = 60000
     eval_type = "openai_api"
+    judge_model_args = None
     other_args = None
     server_timeout = DEFAULT_TIMEOUT_FOR_SERVER_LAUNCH
     envs = None
@@ -460,6 +464,15 @@ class TestNpuAccuracyTestCaseBase(CustomTestCase):
             model_name = os.path.basename(self.model)
             max_retries = get_max_retries(self.datasets)
             best_metrics = None
+
+            judge_model_args = self.judge_model_args
+            if judge_model_args is not None:
+                judge_model_args = dict(judge_model_args)
+                judge_model_args.setdefault(
+                    "api_url", f"http://{host}:{port}/v1/chat/completions"
+                )
+                judge_model_args.setdefault("api_key", "EMPTY")
+
             for attempt in range(max_retries):
                 metrics = run_evalscope(
                     host=host,
@@ -474,6 +487,7 @@ class TestNpuAccuracyTestCaseBase(CustomTestCase):
                     stream=self.stream,
                     timeout=self.timeout,
                     eval_type=self.eval_type,
+                    judge_model_args=judge_model_args,
                 )
                 if best_metrics is None or float(metrics.get("accuracy", 0)) > float(
                     best_metrics.get("accuracy", 0)
