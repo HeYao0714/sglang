@@ -59,9 +59,9 @@ MIMO_V2_5_PRO_FP4_4P_OTHER_ARGS = [
     "--nnodes",
     1,
     "--chunked-prefill-size",
-    4096,
+    8129,
     "--max-total-tokens",
-    80000,
+    600000,
     "--max-running-requests",
     32,
     "--moe-a2a-backend",
@@ -107,7 +107,7 @@ class TestNPUMiMoV2_5_Pro_W4A8_4P_HLE(TestNpuAccuracyTestCaseBase):
     eval_batch_size = 5
     limit = 3
     generation_config = {
-        "temperature": 0.7,
+        "temperature": 0,
         "parallel_tool_calls": True,
     }
     stream = True
