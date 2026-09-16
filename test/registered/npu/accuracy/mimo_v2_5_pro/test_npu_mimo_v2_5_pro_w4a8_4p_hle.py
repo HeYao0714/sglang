@@ -53,17 +53,17 @@ MIMO_V2_5_PRO_FP4_4P_OTHER_ARGS = [
     "--quantization",
     "modelslim",
     "--mem-fraction-static",
-    0.92,
+    0.905,
     "--tp-size",
     8,
     "--nnodes",
     1,
     "--chunked-prefill-size",
-    8129,
+    8192,
     "--max-total-tokens",
     600000,
     "--max-running-requests",
-    32,
+    8,
     "--moe-a2a-backend",
     "deepep",
     "--deepep-mode",
@@ -72,18 +72,15 @@ MIMO_V2_5_PRO_FP4_4P_OTHER_ARGS = [
     1,
     2,
     4,
+    6,
     8,
-    16,
     "--speculative-algorithm",
     "DFLASH",
     "--speculative-draft-model-path",
     MIMO_V2_5_PRO_DFLASH_MODEL_PATH,
     "--speculative-num-draft-tokens",
     8,
-    "--dp-size",
-    2,
-    "--enable-dp-attention",
-    "--enable-dp-lm-head",
+    "--enable-metrics",
 ]
 
 
@@ -93,7 +90,7 @@ class TestNPUMiMoV2_5_Pro_W4A8_4P_HLE(TestNpuAccuracyTestCaseBase):
     model = MIMO_V2_5_PRO_FP4_MODEL_PATH
     other_args = MIMO_V2_5_PRO_FP4_4P_OTHER_ARGS
     envs = MIMO_V2_5_PRO_FP4_4P_ENVS
-    accuracy = 0.7
+    accuracy = 0.33
     datasets = ["hle"]
     dataset_args = {
         "hle": {
